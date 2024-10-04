@@ -1,23 +1,29 @@
 :root {
-    /* variables */
     --cg-black: rgb(30, 32, 32);
     --cg-blue: rgb(36, 94, 255);
+    --cg-light-blue: rgb(102, 153, 255);
     --cg-grey: rgb(243, 243, 243);
     --cg-white: rgb(255, 255, 255);
-  }
+    --cg-bg: linear-gradient(135deg, rgba(176, 195, 248, 0.2), rgba(230, 227, 227, 0.7));
+
+}
+
   
-  html {
-    height: 100%;
-  }
+
   
   body {
-    background: var(--cg-grey);
-    position: relative;
-    min-height: 100vh;
-    padding: 0;
+    background: var(--cg-bg);
+    font-family: 'Arial', sans-serif;
+    line-height: 1.7;
     margin: 0;
-    font-family: monospace;
-  }
+    padding: 0;
+    color: var(--cg-black);
+    overflow-x: hidden;
+    box-sizing: border-box;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
   
   /* CSS for navigation */
   
@@ -27,7 +33,7 @@
     top: 0;
     width: 100%;
     height: 7%;
-    z-index: 10;
+    z-index: 1000;
   
     display: flex;
     justify-content: space-between;
@@ -36,32 +42,32 @@
   
     background-color: var(--cg-black);
     color: var(--cg-white);
-    padding: 0px 0px;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
   
     /* Debug border */
     /* border: solid red; */
   }
+
+
   
   .nav-list {
-    display: flex;
-    flex-direction: row;
-    position: relative;
-    right: 30px;
     list-style: none;
-  
-    /* Debug border */
-    /* border: solid blue; */
-  }
+    display: flex;
+}
   
   .navbar a {
     color: var(--cg-white);
+    font-size: 18px;
+    text-transform: uppercase;
+    text-decoration: none;
     font-weight: bold;
     margin: 0 12px;
-    text-decoration: none;
     letter-spacing: 2px;
-  
-    font-family: monospace;
-  }
+    padding: 10px 15px;
+
+    }
+
+
   
   .navbar a:hover {
     color: var(--cg-blue);
@@ -81,12 +87,11 @@
   }
   
   main {
-    padding: 0 20px 40px 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex:1
+}
   
   .page-title {
     display: flex;
@@ -114,56 +119,20 @@
     /* border: 2px solid red; */
   }
   
-  .project-image {
-    object-fit: cover;
-    width: 100%;
-    height: 500px;
-    flex-basis: 50px;
-    flex-grow: 2;
-  
-    /* Debug border */
-    /* border: 2px solid black; */
-  }
-  
-  .project-details {
+  .project {
     display: flex;
-    background-color: var(--cg-white);
-    width: 30%;
-    height: 500px;
-    flex-shrink: 1;
-    padding: 0 20px;
-    margin: 0px;
-    line-height: 1.5;
-    overflow: scroll;
-  
-    flex-direction: column;
-    text-align: center;
-    justify-content: center;
-  
-    /* Debug border */
-    /* border: 2px solid green; */
-  }
-  
-  .project-details a {
-    color: var(--cg-black);
-    text-decoration: none;
-    font-weight: bold;
-    letter-spacing: 1px;
-  }
-  
-  .project-details a:hover {
-    color: var(--cg-blue);
-    text-decoration: underline;
-  }
-  
-  .project-details {
-    font-weight: lighter;
-  }
-  
-  .project-name {
-    font-weight: bold;
-    font-size: 20px;
-  }
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.project-image {
+    max-width: 100%;
+    height: auto;
+}
+
+.project-details {
+    margin-left: 20px;
+}
   
   /* CSS for home page */
   
@@ -203,20 +172,19 @@
   
   .button {
     background-color: var(--cg-black);
-    border: none;
     color: var(--cg-white);
-  
-    font-family: monospace;
-  
-    padding: 5px 7px;
-    text-align: center;
-  
-    border-radius: 2px;
-  }
-  
-  .button:hover {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.button:hover {
     background-color: var(--cg-blue);
-  }
+    transform: scale(1.05);
+}
   
   .resume h2 {
     font-family: Georgia;
@@ -251,14 +219,20 @@
   
   /* CSS for footer */
   
+
   .footer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: var(--cg-black);
+    background: var(--cg-black);
     color: var(--cg-white);
-    position: absolute;
-    bottom: 0;
+    padding: 20px;
+    text-align: center;
     width: 100%;
-    height: 2.5rem;
+
+}
+
+footer .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
